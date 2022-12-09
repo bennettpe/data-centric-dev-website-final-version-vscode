@@ -95,7 +95,8 @@ def cuisine_in_recipes():
     cuisine_list = create_cuisines_list()
     # count recipes by cuisine
     for cuisine in cuisine_list:
-        count = mongo.db.recipes.find({"cuisine_name": cuisine}).count()
+        count = mongo.db.recipes.count_documents({"cuisine_name": cuisine})
+
         count_obj = {"cuisine_name": cuisine, "count": count}
         cuisine_in_recipe.append(count_obj)
     return cuisine_in_recipe

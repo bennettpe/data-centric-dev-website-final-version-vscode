@@ -110,11 +110,12 @@
   border-radius: 6rem;
 }
 
-/* CHANGE border for Card */
+/* CHANGE border for Card 
 .card {
   border: 1.25px solid rgba(0, 0, 0, .50);
   background-color: rgba(245, 245, 245, 0.9);
 }
+*/
 
 /* Add Shadow for Card hover */
 .card:hover {
@@ -136,6 +137,7 @@ h5.card-subtitle {
 /* CHANGE padding for Card body */
 .card-body {
   padding: 0rem;
+  border: 1.25px solid rgba(0, 0, 0, .50);
 }
 
 /* ADD top border for Card header */
