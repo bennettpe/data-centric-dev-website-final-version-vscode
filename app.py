@@ -258,7 +258,8 @@ def by_difficulty(difficulty_name):
 def by_main_ingredient(main_ingredient):
         recipes_document_by_main_ingredient = mongo.db.recipes.find({"main_ingredient": main_ingredient}).sort("ratings_score",-1)
         # Counts total amount of recipes by main ingredient selected
-        recipe_main_ingredient_count = mongo.db.recipes.find({ "main_ingredient": main_ingredient }).count()
+        recipe_main_ingredient_count = mongo.db.recipes.count_documents({ "main_ingredient": main_ingredient }) 
+
         return render_template("by_main_ingredient.html",
                                 recipe_main_ingredient_count        = recipe_main_ingredient_count,
                                 main_ingredient                     = main_ingredient,
